@@ -1,7 +1,6 @@
 import * as React from "react";
-import {Component} from 'react';
-import './tweet.css';
-import AddTweet from "./AddTweet";
+import {Component} from "react";
+import "./tweet.css";
 import GetTweet from "./GetTweet";
 
 class Tweet extends Component {
@@ -9,7 +8,7 @@ class Tweet extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            logo: "./images/devoxx.png",
+            logo: require("../../resources/image/devoxx.png"),
             tweets: [],
             count: 0,
             maxDisplay: 5
@@ -41,9 +40,9 @@ class Tweet extends Component {
     handleClick() {
         this.setState(prevState =>
             (prevState.tweets
-                .unshift(
-                    {key: new Date().getTime() + "r", label: "New", image: this.state.logo}
-                )
+                    .unshift(
+                        {key: new Date().getTime() + "r", label: "New", image: this.state.logo}
+                    )
             )
         );
         this.setState(prevState => ({

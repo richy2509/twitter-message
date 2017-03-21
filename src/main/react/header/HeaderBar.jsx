@@ -1,12 +1,13 @@
 import * as React from "react";
 import {Component} from "react";
 import './headerBar.css'
+
 class HeaderBar extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            logo: "./images/devoxx.png"
+            logo: require('../../resources/image/devoxx.png')
         }
     }
 

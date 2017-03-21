@@ -1,4 +1,4 @@
-const { FuseBox, SVGPlugin, CSSPlugin, BabelPlugin } = require("fuse-box");
+const { FuseBox, ImageBase64Plugin, SVGPlugin, CSSPlugin, BabelPlugin } = require("fuse-box");
 
 
 // Create FuseBox Instance
@@ -9,7 +9,8 @@ let fuse = new FuseBox({
     plugins: [
         SVGPlugin(),
         CSSPlugin(),
-        BabelPlugin()
+        BabelPlugin(),
+        ImageBase64Plugin()
     ]
 });
 
