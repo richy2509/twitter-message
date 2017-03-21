@@ -1,0 +1,24 @@
+.tweet-list {
+
+    background-color: darkgreen;
+
+}
+
+.tweet-list ul {
+    padding: 0;
+}
+
+.tweet-list ul li {
+    margin-bottom: 20px;
+    min-height: 100px;
+    background-color: #4c6fff;
+}
+
+.tweet {
+    border: #ffffff solid 1px;
+}
+
+.tweet-img {
+    max-height: 50px;
+    text-align: center;
+}
