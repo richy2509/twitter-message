@@ -1,17 +1,21 @@
-const { FuseBox, ImageBase64Plugin, SVGPlugin, CSSPlugin, BabelPlugin } = require("fuse-box");
+const fsbx = require('fuse-box');
 
-
-// Create FuseBox Instance
-let fuse = new FuseBox({
-    homeDir: "src/",
+const fuseBox = fsbx.FuseBox.init({
+    homeDir: 'src/',
     sourcemaps: true,
-    outFile: "./build/out.js",
+    outFile: './dist/app.js',
     plugins: [
-        SVGPlugin(),
-        CSSPlugin(),
-        BabelPlugin(),
-        ImageBase64Plugin()
+        [
+            fsbx.SassPlugin({outputStyle: 'compressed'}),
+            fsbx.CSSPlugin({})
+        ],
+        fsbx.TypeScriptHelpers(),
+        fsbx.JSONPlugin(),
+        fsbx.HTMLPlugin({useDefault: false})
     ]
 });
 
-fuse.devServer(">index.jsx");
+fuseBox.devServer('>app/app.ts', {
+    port: 4446,
+    httpServer: false
+});

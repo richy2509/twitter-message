@@ -8,7 +8,7 @@ class Tweet extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            logo: require("../../resources/image/devoxx.png"),
+            logo: require("../../.././image/devoxx.png"),
             tweets: [],
             count: 0,
             maxDisplay: 5
